@@ -1,6 +1,6 @@
 # Slovenian names
 
-Tools and collection of Slovenian names, sorted by sex.
+Tools and collection of Slovenian names, sorted by genre.
 
 ## Installation & development
 
