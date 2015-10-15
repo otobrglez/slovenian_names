@@ -1,28 +1,26 @@
-# .PHONY: scrape
+SCRAPERS = wikipedia hervardi slovarji_info bambino narodne_pesmi
+SEXES = data/m data/f
+FEMALES = $(SCRAPERS:%=./data/f/%.csv)
+FEMALES_JOINED = $(SCRAPERS:%=./data/f.csv)
+MALES = $(SCRAPERS:%=./data/m/%.csv)
+MALES_JOINED = $(SCRAPERS:%=./data/m.csv)
+GENRES = $(FEMALES) $(MALES)
+GENRES_JOINED = $(MALES_JOINED) $(FEMALES_JOINED)
 
-scrapers = hervardi slovarji_info bambino narodne_pesmi wikipedia
+.PHONY: all mk_sexes $(SEXES)
 
-#$(patsubst %,%.csv,$(scrapers)):
-#	echo "test" > $@
+mk_sexes:
+	mkdir -p $(SEXES)
 
-sexes = m f
+$(SEXES): $(GENRES)
 
-females = $(scrapers:%=./data/f/%.csv)
-males = $(scrapers:%=./data/m/%.csv)
+data/%.csv:
+	./scripts/$(*F).py $(*D) > $@
 
-$(males): %.csv: %.py
-	echo $@
-
-%.py:
-	echo "doing py"
-	echo $@
-	echo $(subst data,scripts,$@)
-	echo "done"
-
-#all: $(scrapers)
-
-#$(scrapers): %.csv: %.py
-#	echo $@
+all: mk_sexes $(SEXES)
+	sort -u ./data/f/*.csv > ./data/f.csv
+	sort -u ./data/m/*.csv > ./data/m.csv
 
 clean:
-	rm -rf data/$(sexes)
+	rm -rf data/{f,m}.csv
+	rm -rf data/{f,m}

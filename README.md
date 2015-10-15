@@ -12,12 +12,7 @@ Tools and collection of Slovenian names, sorted by sex.
 
 ## Compiling list
 
-    SRC=hervardi && SEX=f && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
-    SRC=hervardi && SEX=m && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
-    SRC=slovarji_info && SEX=f && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
-    SRC=slovarji_info && SEX=m && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
-    SRC=bambino && SEX=m && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
-    SRC=bambino && SEX=f && ./scripts/$SRC.py $SEX > data/$SEX/$SRC.csv
+    make
 
 ## Author
 - [Oto Brglez](https://github.com/otobrglez)
