@@ -1,6 +1,12 @@
 # Slovenian names
 
-Tools and collection of Slovenian names, sorted by genre.
+List of Slovenian [names](data/names.csv) with genre.
+
+## Details
+
+- Data-set contains 610 male names and 421 female names.
+- Names are in UTF-8
+- Data is collected from publicly available data sources.
 
 ## Installation & development
 
@@ -13,6 +19,10 @@ Tools and collection of Slovenian names, sorted by genre.
 ## Compiling list
 
     make
-
+    
 ## Author
 - [Oto Brglez](https://github.com/otobrglez)
+
+## License
+
+- MIT, 2015
