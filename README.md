@@ -9,6 +9,7 @@ List of Slovenian [names](data/names.csv) with genre.
 - [f-combined.txt](data/f-combined.txt) contains female names.
 - [m-combined.txt](data/m-combined.txt) contains male names.
 - [names.csv](data/names.csv) contains all names in CSV format.
+- [names.sql](sql/names.sql) contains MySQL `TABLE` and `INSERT`.
 - Data is collected from publicly available data sources.
 
 ## Development
